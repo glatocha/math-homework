@@ -1,5 +1,22 @@
+:root {
+  --primary: #66fcf1;
+  --primary-text: #66fcf1;
+  --secondary: #fff;
+  --bcg-color: #1f2833;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
+  color: var(--primary-text);
+  background-color: var(--bcg-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 0.5em;
 }
 
 li {
@@ -8,7 +25,13 @@ li {
 }
 
 .hide {
-  display: none;
+  /* display: none; */
+  visibility: hidden;
+}
+
+table {
+  margin: auto;
+  font-size: 1.5em;
 }
 
 td {
@@ -16,6 +39,68 @@ td {
   padding: 0.2em 0.5em;
 }
 
-.text-left {
+td:first-child {
   text-align: left;
+  padding-right: 1em;
+  font-size: 0.8em;
+  opacity: 80%;
+}
+
+.result {
+  font-weight: bold;
+}
+
+button {
+  /* background-color: var(--primary); */
+  background: none;
+  color: var(--secondary);
+  border: none;
+  padding: 0.5em 1em;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  margin: 1em auto;
+  border-radius: 0.5em;
+  border: 1px solid var(--primary);
+  transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+label {
+  max-width: 200px;
+  align-self: center;
+}
+
+input {
+  align-self: center;
+  text-align: center;
+  max-width: 100px;
+  background: none;
+  color: var(--secondary);
+  border: none;
+  padding: 0.5em 1em;
+  font: inherit;
+  outline: inherit;
+  border-radius: 0.5em;
+  border: 1px solid var(--primary);
+  margin: 0.5em 0 0.2em 0;
+}
+
+input:increment {
+  color: red;
+}
+
+.settings {
+  display: flex;
+  align-self: center;
+  margin-bottom: 0;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  margin: 0 1em;
 }

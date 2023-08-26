@@ -3,15 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="favicon.png" type="image/png" />
     <link rel="stylesheet" href="style.css" />
     <title>Math generator</title>
   </head>
   <body>
-    <h2>Math Homework</h2>
+    <h2>Johnny's Math Homework</h2>
+    <div class="settings">
+      <div class="col">
+        <label for="noOfTasks">How many to generate?</label>
+        <input type="number" name="noOfTasks" id="noOfTasks" value="10" min="1" max="100" />
+      </div>
+      <div class="col">
+        <label for="maxValue">Maximum result?</label>
+        <input
+          type="number"
+          name="maxValue"
+          id="maxValue"
+          value="100"
+          min="100"
+          step="100"
+          max="100000"
+        />
+      </div>
+    </div>
     <button id="genBtn">Generate</button>
     <table id="list"></table>
     <button id="showBtn">Show results</button>
-    <BR></BR>
     <script src="script.js"></script>
   </body>
 </html>
