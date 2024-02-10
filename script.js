@@ -121,7 +121,7 @@ function numToPic(value) {
 function createImg(value, cssClass) {
   const img = document.createElement("img");
   img.classList.add(cssClass);
-  img.src = `/assets/${getShort(value)}`;
+  img.src = `assets/${getShort(value)}`;
 
   return img;
 }
