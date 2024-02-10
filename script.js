@@ -6,6 +6,8 @@ const negative = false;
 const listEl = document.getElementById("list");
 const genBtnEl = document.getElementById("genBtn");
 const showBtnEl = document.getElementById("showBtn");
+const multiplyEl = document.getElementById("multiply");
+const divideEl = document.getElementById("divide");
 
 var showResults = false;
 
@@ -36,45 +38,50 @@ function generateNew() {
   listEl.innerHTML = "";
   showBtnEl.innerText = "Show results";
   for (i = 1; i <= noOfTasks; i++) {
-    //preparing the table ROW HTML Structure
-    const tableRowEl = document.createElement("tr");
-    const tableNoEl = document.createElement("td");
-    tableNoEl.innerText = `${i}.`;
-    const tableFirstNumEl = document.createElement("td");
-    const tableOperatorEl = document.createElement("td");
-    const tableSecondNumEl = document.createElement("td");
-    const tableEqualEl = document.createElement("td");
-    tableEqualEl.innerText = "=";
-    const tableResultEl = document.createElement("td");
-    tableRowEl.appendChild(tableNoEl);
-    tableRowEl.appendChild(tableFirstNumEl);
-    tableRowEl.appendChild(tableOperatorEl);
-    tableRowEl.appendChild(tableSecondNumEl);
-    tableRowEl.appendChild(tableEqualEl);
-    tableRowEl.appendChild(tableResultEl);
-    tableResultEl.classList.add("result");
-    tableResultEl.classList.add("hide");
-
     //calculations start
     var result = 0;
     const numberOne = Math.floor(Math.random() * (max - 1)) + 1;
     const opAdding = Math.random() < 0.5; //True for -, False for +
-    tableFirstNumEl.innerText = numberOne;
 
     if (opAdding) {
       const numberTwo = Math.floor(Math.random() * (max - numberOne)) + 1;
       result = numberOne + numberTwo;
-      tableOperatorEl.innerText = "+";
-      tableSecondNumEl.innerText = numberTwo;
-      tableResultEl.innerText = result;
+      firstOperand = "+";
     } else {
       //subtracting
       const numberTwo = Math.floor(Math.random() * (numberOne - 1)) + 1;
       result = numberOne - numberTwo;
-      tableOperatorEl.innerText = "-";
-      tableSecondNumEl.innerText = numberTwo;
-      tableResultEl.innerText = result;
+      firstOperand = "-";
     }
-    listEl.appendChild(tableRowEl);
+    listEl.appendChild(makeTableRow(i, numberOne, firstOperand, numberTwo, 0, 0, result));
   }
+}
+
+function makeTableRow(number, firstNumber, firstOp, secondNumber, secondOp, thirdNumber, result) {
+  //preparing the table ROW HTML Structure
+  const tableRowEl = document.createElement("tr");
+  const tableNoEl = document.createElement("td");
+  tableNoEl.innerText = `${number}.`;
+  const tableFirstNumEl = document.createElement("td");
+  const tableOperatorEl = document.createElement("td");
+  const tableSecondNumEl = document.createElement("td");
+  const tableEqualEl = document.createElement("td");
+  tableEqualEl.innerText = "=";
+  const tableResultEl = document.createElement("td");
+
+  tableRowEl.appendChild(tableNoEl);
+  tableRowEl.appendChild(tableFirstNumEl);
+  tableRowEl.appendChild(tableOperatorEl);
+  tableRowEl.appendChild(tableSecondNumEl);
+  tableRowEl.appendChild(tableEqualEl);
+  tableRowEl.appendChild(tableResultEl);
+  tableResultEl.classList.add("result");
+  tableResultEl.classList.add("hide");
+
+  tableFirstNumEl.innerText = firstNumber;
+  tableSecondNumEl.innerText = secondNumber;
+  tableOperatorEl.innerText = firstOp;
+  tableResultEl.innerText = result;
+
+  return tableRowEl;
 }

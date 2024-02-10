@@ -104,3 +104,19 @@ input:increment {
   flex-direction: column;
   margin: 0 1em;
 }
+
+.operands {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content: flex-start;
+  align-items: stretch;
+}
+
+.operands * {
+  margin-right: auto;
+}
+
+.operands * input {
+  margin-right: 0.2em;
+}
