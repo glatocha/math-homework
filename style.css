@@ -38,7 +38,7 @@ table {
 
 td {
   text-align: center;
-  padding: 0.2em 0.5em;
+  padding: 5px 5px;
 }
 
 td:first-child {
@@ -109,6 +109,12 @@ input:increment {
   margin: 0 1em;
 }
 
+.row {
+  margin: 0 auto;
+  display: flex;
+  gap: 10px;
+}
+
 .operands {
   display: flex;
   flex-direction: column;
@@ -146,4 +152,10 @@ hr {
 img {
   height: 30px;
   margin: 0 1px;
+}
+
+@media screen and (max-width: 500px) {
+  img {
+    height: 20px;
+  }
 }
