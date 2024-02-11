@@ -1,7 +1,9 @@
 :root {
   --primary: #66fcf1;
   --primary-text: #66fcf1;
-  --secondary: #fff;
+  /* --secondary: #fff; */
+  --secondary: #66fca6;
+  --buttonText: #fff;
   --bcg-color: #1f2833;
 }
 
@@ -36,7 +38,7 @@ table {
 
 td {
   text-align: center;
-  padding: 0.2em 0.5em;
+  padding: 5px 5px;
 }
 
 td:first-child {
@@ -44,6 +46,8 @@ td:first-child {
   padding-right: 1em;
   font-size: 0.8em;
   opacity: 80%;
+
+  color: var(--secondary);
 }
 
 .result {
@@ -53,7 +57,7 @@ td:first-child {
 button {
   /* background-color: var(--primary); */
   background: none;
-  color: var(--secondary);
+  color: var(--buttonText);
   border: none;
   padding: 0.5em 1em;
   font: inherit;
@@ -79,7 +83,7 @@ input {
   text-align: center;
   max-width: 100px;
   background: none;
-  color: var(--secondary);
+  color: var(--buttonText);
   border: none;
   padding: 0.5em 1em;
   font: inherit;
@@ -103,4 +107,55 @@ input:increment {
   display: flex;
   flex-direction: column;
   margin: 0 1em;
+}
+
+.row {
+  margin: 0 auto;
+  display: flex;
+  gap: 10px;
+}
+
+.operands {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content: flex-start;
+  align-items: stretch;
+}
+
+.operands * {
+  margin-right: auto;
+}
+
+.operands * input {
+  margin-right: 0.2em;
+}
+
+hr {
+  width: 80%;
+  max-width: 400px;
+  border-color: var(--primary);
+}
+
+.test-section {
+  margin: 0 auto;
+}
+
+.test-section-input {
+  margin: 0 auto;
+}
+
+#output {
+  max-height: 30px;
+}
+
+img {
+  height: 30px;
+  margin: 0 1px;
+}
+
+@media screen and (max-width: 500px) {
+  img {
+    height: 20px;
+  }
 }
